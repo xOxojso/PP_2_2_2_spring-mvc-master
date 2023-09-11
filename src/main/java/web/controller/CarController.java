@@ -21,7 +21,7 @@ public class CarController {
     }
 
     @GetMapping()
-    public String getCarsByCount(@RequestParam(value = "count", required = false, defaultValue = "5") Integer count,
+    public String getCarsByCount(@RequestParam(value = "count", required = false, defaultValue = "5") int count,
                                  ModelMap modelMap) {
 
         List<Car> cars = carService.getCarsByCount(count);

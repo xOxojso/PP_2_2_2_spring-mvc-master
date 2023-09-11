@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 import web.model.Car;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Component
@@ -19,12 +20,9 @@ public class CarDao {
         cars.add(new Car("car5", 2020, "purple"));
     }
 
-    public List<Car> getCars() {
-        return cars;
-    }
-
-    public List<Car> getCarsByCount(Integer count) {
+    public List<Car> getCarsByCount(int count) {
         return switch (count) {
+            case 0 -> Collections.emptyList();
             case 1 -> cars.stream().limit(1).toList();
             case 2 -> cars.stream().limit(2).toList();
             case 3 -> cars.stream().limit(3).toList();
