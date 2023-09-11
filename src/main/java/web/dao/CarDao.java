@@ -24,9 +24,6 @@ public class CarDao {
     }
 
     public List<Car> getCarsByCount(Integer count) {
-        if (count == null) {
-            count = 5;
-        }
         return switch (count) {
             case 1 -> cars.stream().limit(1).toList();
             case 2 -> cars.stream().limit(2).toList();
